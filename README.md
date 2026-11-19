@@ -47,11 +47,11 @@ groundmotion-correlation-evaluation/
 
 | Notebook | Analysis |
 | --- | --- |
-| [`PHD_OBJ2_GMMRES_V1_1.ipynb`](notebooks/PHD_OBJ2_GMMRES_V1_1.ipynb) | GMM predictions, residual partitioning, and preparation of normalized within-event residuals. |
-| [`PHD_OBJ2_NZSCM_V1_5.ipynb`](notebooks/PHD_OBJ2_NZSCM_V1_5.ipynb) | Empirical spatial correlations, existing SCM comparisons, regional analyses, and correlation-deviation diagnostics. |
-| [`PHD_OBJ2_PYMC_V1_1.ipynb`](notebooks/PHD_OBJ2_PYMC_V1_1.ipynb) | Bayesian fitting of stationary and non-stationary SCMs and related model evaluation. |
-| [`PHD_OBJ2_ESUP_GMMSEL_V1_1.ipynb`](notebooks/PHD_OBJ2_ESUP_GMMSEL_V1_1.ipynb) | Sensitivity of inferred correlation structure to GMM selection (Electronic Supplement A and associated analyses). |
-| [`PHD_OBJ2_ESUP_MODSEL_v1_2.ipynb`](notebooks/PHD_OBJ2_ESUP_MODSEL_v1_2.ipynb) | Feature selection, alternative non-stationary formulations, and predictive model comparisons (Electronic Supplement C). |
+| [`PHD_OBJ2_GMMRES.ipynb`](notebooks/PHD_OBJ2_GMMRES.ipynb) | GMM predictions, residual partitioning, and preparation of normalized within-event residuals. |
+| [`PHD_OBJ2_NZSCM.ipynb`](notebooks/PHD_OBJ2_NZSCM.ipynb) | Empirical spatial correlations, existing SCM comparisons, regional analyses, and correlation-deviation diagnostics. |
+| [`PHD_OBJ2_PYMC.ipynb`](notebooks/PHD_OBJ2_PYMC.ipynb) | Bayesian fitting of stationary and non-stationary SCMs and related model evaluation. |
+| [`PHD_OBJ2_ESUP_GMMSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_GMMSEL.ipynb) | Sensitivity of inferred correlation structure to GMM selection (Electronic Supplement A and associated analyses). |
+| [`PHD_OBJ2_ESUP_MODSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_MODSEL.ipynb) | Feature selection, alternative non-stationary formulations, and predictive model comparisons (Electronic Supplement C). |
 
 The notebooks are research workflows rather than standalone demonstrations. Some analyses use derived tables or fitted-model outputs from preceding steps. The notebooks retain their original filenames to facilitate comparison with the associated manuscript and electronic supplements.
 
