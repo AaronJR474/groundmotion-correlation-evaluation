@@ -1,0 +1,28 @@
+# Python / notebook build artifacts
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+*.egg-info/
+build/
+dist/
+
+# Avoid accidentally committing original/unlicensed/large datasets.
+# Keep per-folder data README files and the folder structure.
+data/residuals/*
+!data/residuals/README.md
+data/nzwide_scm/*
+!data/nzwide_scm/README.md
+
+# Generated figures and results are local by default.
+results/*
+!results/.gitkeep
+figures/*
+!figures/.gitkeep
+
+.DS_Store
+Thumbs.db
