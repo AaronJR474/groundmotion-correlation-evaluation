@@ -25,21 +25,25 @@ The emphasis is on **evaluating when a model is adequate and whether additional 
 ```text
 groundmotion-correlation-evaluation/
 ├── notebooks/                # Analysis workflows and publication figures
-│   ├── PHD_OBJ2_GMMRES_V1_1.ipynb
-│   ├── PHD_OBJ2_NZSCM_V1_5.ipynb
-│   ├── PHD_OBJ2_PYMC_V1_1.ipynb
-│   ├── PHD_OBJ2_ESUP_GMMSEL_V1_1.ipynb
-│   └── PHD_OBJ2_ESUP_MODSEL_v1_2.ipynb
+│   ├── PHD_OBJ2_GMMRES.ipynb
+│   ├── PHD_OBJ2_NZSCM.ipynb
+│   ├── PHD_OBJ2_PYMC.ipynb
+│   ├── PHD_OBJ2_ESUP_GMMSEL.ipynb
+│   ├── PHD_OBJ2_ESUP_MODSEL.ipynb
+│   ├── PHD_OBJ2_RISK_SUMMARY.ipynb
+│   └── PBDV_R26.ipynb
 ├── src/                      # Reusable Python functions
 │   ├── cbb21_cossim.py
 │   ├── cbb21_gmres.py
 │   └── cbb21_gmscm.py
 ├── data/
 │   ├── residuals/            # Ground-motion inputs and residual tables
-│   └── nzwide_scm/           # SCM parameters and evaluation inputs/results
+│   ├── nzwide_scm/           # SCM parameters and evaluation inputs/results
+│   └── risk/                 # Scenario portfolio-loss curves
 ├── figures/                 # Generated figures and visualisations
 ├── results/                 # Derived analysis outputs
 ├── requirements.txt
+├── requirements-research.txt
 └── README.md
 ```
 
@@ -52,8 +56,10 @@ groundmotion-correlation-evaluation/
 | [`PHD_OBJ2_PYMC.ipynb`](notebooks/PHD_OBJ2_PYMC.ipynb) | Bayesian fitting of stationary and non-stationary SCMs and related model evaluation. |
 | [`PHD_OBJ2_ESUP_GMMSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_GMMSEL.ipynb) | Sensitivity of inferred correlation structure to GMM selection (Electronic Supplement A and associated analyses). |
 | [`PHD_OBJ2_ESUP_MODSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_MODSEL.ipynb) | Feature selection, alternative non-stationary formulations, and predictive model comparisons (Electronic Supplement C). |
+| [`PHD_OBJ2_RISK_SUMMARY.ipynb`](notebooks/PHD_OBJ2_RISK_SUMMARY.ipynb) | Scenario portfolio-loss exceedance curves for the three ruptures, comparing national and regional SCMs. |
+| [`PBDV_R26.ipynb`](notebooks/PBDV_R26.ipynb) | Conditional/unconditional spatial IM fields and leave-one-station-out conditional IM (LOOCIM) evaluation for the selected New Zealand earthquakes. |
 
-The notebooks are research workflows rather than standalone demonstrations. Some analyses use derived tables or fitted-model outputs from preceding steps. The notebooks retain their original filenames to facilitate comparison with the associated manuscript and electronic supplements.
+The notebooks are research workflows rather than standalone demonstrations. Some analyses require derived tables or fitted-model outputs from preceding steps; the scenario applications additionally require prepared input data and raster products.
 
 ### Python modules
 
@@ -80,9 +86,17 @@ python -m pip install -r requirements.txt
 python -m jupyter lab
 ```
 
-**Additional dependencies:** Bayesian fitting requires a compatible installation of **JAX, NumPyro, ArviZ, and xarray**; the residual-generation workflow uses **OpenQuake**; and some analyses use **VarioCorreKrigE**. These packages should be installed in versions compatible with the selected Python environment. The Bayesian notebooks enable JAX 64-bit precision for numerical inference.
+For Bayesian fitting, spatial conditioning/LOOCIM, and the PyGMT case-study figures, also install the research dependencies:
 
-Each notebook includes a configuration cell that locates the repository and makes the `src/` modules available, so the notebooks can be opened from the repository root or the `notebooks/` directory.
+```bash
+python -m pip install -r requirements-research.txt
+```
+
+The [`VarioCorreKrigE`](https://github.com/AaronJR474/VarioCorreKrigE) and [`pygmf`](https://github.com/AaronJR474/pygmf) projects are included as Git dependencies in that file. `VarioCorreKrigE` is used for empirical variogram/correlation fitting in `PHD_OBJ2_NZSCM.ipynb`; `pygmf` provides conditional-field computations and LOOCIM in `PBDV_R26.ipynb`. For PyGMT maps, the **native GMT library must also be installed** (for example via conda-forge); installing `pygmt` with pip alone is not sufficient. Some relief maps are downloaded through GMT on first use and may also require network access. The residual-generation notebook additionally requires a compatible **OpenQuake engine** installation. The Bayesian fitting notebook enables JAX 64-bit precision explicitly.
+
+The dependency files describe the required packages but are not a tested, fully pinned reproducibility lockfile. For publication-grade recreation, use the environment associated with the tagged analysis release.
+
+Each notebook includes a configuration cell that locates the repository and makes the `src/` modules available, so the notebooks can be opened from the repository root or the `notebooks/` directory. External project dependencies (`VarioCorreKrigE` and `pygmf`) must be installed separately as described above.
 
 ## Data and reproducibility
 
@@ -90,6 +104,7 @@ The observational application uses NZGMDB v4.3 ground-motion and station informa
 
 - [`data/residuals/`](data/residuals/README.md): ground-motion records, GMM inputs, station metadata, and within-event residual tables.
 - [`data/nzwide_scm/`](data/nzwide_scm/README.md): fitted SCM parameter summaries, predictive evaluation tables, and related model inputs or outputs.
+- [`data/risk/`](data/risk/README.md): national and regional portfolio-loss exceedance curves for the three selected ruptures.
 
 The directory-specific README files describe the expected filenames and organization. To reproduce a particular analysis, the corresponding datasets and previously generated intermediate results must be available at the paths used by its notebook. Computationally intensive fitting stages may require substantial memory and processing time.
 

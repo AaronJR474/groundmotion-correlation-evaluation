@@ -1,0 +1,15 @@
+# Additional Python dependencies used by Bayesian fitting, LOOCIM,
+# conditional ground-motion fields, and conference/portfolio figures.
+-r requirements.txt
+jax
+numpyro
+arviz
+xarray
+pygmt
+# The spatial correlation and LOOCIM workflows use these separately maintained projects.
+# VarioCorreKrigE is imported directly by PHD_OBJ2_NZSCM.ipynb.
+# pygmf is imported by PBDV_R26.ipynb for conditional IM and LOOCIM.
+git+https://github.com/AaronJR474/VarioCorreKrigE.git
+git+https://github.com/AaronJR474/pygmf.git
+# NOTE: PyGMT also needs the native GMT library installed independently.
+# NOTE: The GMM-residual notebook additionally needs compatible OpenQuake.

@@ -1,18 +1,17 @@
-# General environment for the observational analysis
+# Common scientific stack for the observational, risk-summary, and figure notebooks.
+# Compatible versions should be recorded with a tagged publication release.
 numpy
 pandas
 scipy
-scikit-learn
-statsmodels
 matplotlib
 seaborn
+scikit-learn
+statsmodels
 tqdm
-pyproj
 geopandas
+pyproj
 shapely>=2
+rasterio
+h5py
 ipykernel
 jupyterlab
-
-# The Bayesian notebook additionally requires jax, numpyro, arviz and xarray.
-# The GMM residual notebook requires a compatible OpenQuake installation.
-# NZ SCM notebook calls the external VarioCorreKrigE package.
