@@ -31,7 +31,11 @@ groundmotion-correlation-evaluation/
 │   ├── PHD_OBJ2_ESUP_GMMSEL.ipynb
 │   ├── PHD_OBJ2_ESUP_MODSEL.ipynb
 │   ├── PHD_OBJ2_RISK_SUMMARY.ipynb
-│   └── PBDV_R26.ipynb
+│   ├── PBDV_R26.ipynb
+│   ├── PHD_OBJ2_NZSCM_V1_5.ipynb
+│   ├── PHD_OBJ2_PYMC_V1_1.ipynb
+│   ├── PHD_OBJ2_ESUP_GMMSEL_V1_1.ipynb
+│   └── PHD_OBJ2_ESUP_MODSEL_v1_2.ipynb
 ├── src/                      # Reusable Python functions
 │   ├── cbb21_cossim.py
 │   ├── cbb21_gmres.py
