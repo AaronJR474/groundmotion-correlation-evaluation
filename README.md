@@ -25,12 +25,12 @@ The emphasis is on **evaluating when a model is adequate and whether additional 
 ```text
 groundmotion-correlation-evaluation/
 ├── notebooks/                # Analysis workflows and publication figures
-│   ├── PHD_OBJ2_GMMRES.ipynb
-│   ├── PHD_OBJ2_NZSCM.ipynb
-│   ├── PHD_OBJ2_PYMC.ipynb
-│   ├── PHD_OBJ2_ESUP_GMMSEL.ipynb
-│   ├── PHD_OBJ2_ESUP_MODSEL.ipynb
-│   ├── PHD_OBJ2_RISK_SUMMARY.ipynb
+│   ├── GMMRES.ipynb
+│   ├── NZSCM.ipynb
+│   ├── PYMC.ipynb
+│   ├── ESUP_GMMSEL.ipynb
+│   ├── ESUP_MODSEL.ipynb
+│   ├── RISK_SUMMARY.ipynb
 │   ├── PBDV_R26.ipynb
 ├── src/                      # Reusable Python functions
 │   ├── cbb21_cossim.py
@@ -51,12 +51,12 @@ groundmotion-correlation-evaluation/
 
 | Notebook | Analysis |
 | --- | --- |
-| [`PHD_OBJ2_GMMRES.ipynb`](notebooks/PHD_OBJ2_GMMRES.ipynb) | GMM predictions, residual partitioning, and preparation of normalized within-event residuals. |
-| [`PHD_OBJ2_NZSCM.ipynb`](notebooks/PHD_OBJ2_NZSCM.ipynb) | Empirical spatial correlations, existing SCM comparisons, regional analyses, and correlation-deviation diagnostics. |
-| [`PHD_OBJ2_PYMC.ipynb`](notebooks/PHD_OBJ2_PYMC.ipynb) | Bayesian fitting of stationary and non-stationary SCMs and related model evaluation. |
-| [`PHD_OBJ2_ESUP_GMMSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_GMMSEL.ipynb) | Sensitivity of inferred correlation structure to GMM selection (Electronic Supplement A and associated analyses). |
-| [`PHD_OBJ2_ESUP_MODSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_MODSEL.ipynb) | Feature selection, alternative non-stationary formulations, and predictive model comparisons (Electronic Supplement C). |
-| [`PHD_OBJ2_RISK_SUMMARY.ipynb`](notebooks/PHD_OBJ2_RISK_SUMMARY.ipynb) | Scenario portfolio-loss exceedance curves for the three ruptures, comparing national and regional SCMs. |
+| [`GMMRES.ipynb`](notebooks/PHD_OBJ2_GMMRES.ipynb) | GMM predictions, residual partitioning, and preparation of normalized within-event residuals. |
+| [`NZSCM.ipynb`](notebooks/PHD_OBJ2_NZSCM.ipynb) | Empirical spatial correlations, existing SCM comparisons, regional analyses, and correlation-deviation diagnostics. |
+| [`PYMC.ipynb`](notebooks/PHD_OBJ2_PYMC.ipynb) | Bayesian fitting of stationary and non-stationary SCMs and related model evaluation. |
+| [`ESUP_GMMSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_GMMSEL.ipynb) | Sensitivity of inferred correlation structure to GMM selection (Electronic Supplement A and associated analyses). |
+| [`ESUP_MODSEL.ipynb`](notebooks/PHD_OBJ2_ESUP_MODSEL.ipynb) | Feature selection, alternative non-stationary formulations, and predictive model comparisons (Electronic Supplement C). |
+| [`RISK_SUMMARY.ipynb`](notebooks/PHD_OBJ2_RISK_SUMMARY.ipynb) | Scenario portfolio-loss exceedance curves for the three ruptures, comparing national and regional SCMs. |
 | [`PBDV_R26.ipynb`](notebooks/PBDV_R26.ipynb) | Conditional/unconditional spatial IM fields and leave-one-station-out conditional IM (LOOCIM) evaluation for the selected New Zealand earthquakes. |
 
 The notebooks are research workflows rather than standalone demonstrations. Some analyses require derived tables or fitted-model outputs from preceding steps; the scenario applications additionally require prepared input data and raster products.
