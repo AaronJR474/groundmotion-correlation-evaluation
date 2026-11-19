@@ -25,7 +25,7 @@ The emphasis is on **evaluating when a model is adequate and whether additional 
 ```text
 groundmotion-correlation-evaluation/
 ├── notebooks/                # Analysis workflows and publication figures
-│   ├── PHD_OBJ2_GMMRES_V1_1.ipynb
+│   ├── PHD_OBJ2_GMMRES.ipynb
 │   ├── PHD_OBJ2_NZSCM_V1_5.ipynb
 │   ├── PHD_OBJ2_PYMC_V1_1.ipynb
 │   ├── PHD_OBJ2_ESUP_GMMSEL_V1_1.ipynb
